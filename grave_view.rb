@@ -1,0 +1,4 @@
+class TombstoneView
+
+
+end
