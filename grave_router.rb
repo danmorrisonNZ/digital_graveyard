@@ -5,12 +5,16 @@ exit = false
 undertaker = Undertaker.new
 
 
+undertaker.welcome_message
+
 until exit
 
-  input = gets.chomp
-  if input ==
-
-  elsif  input == "exit"
+  input = undertaker.user_input
+  if input == "CREATE"
+    undertaker.request_information
+    undertaker.user_input
+    undertaker.create_tombstone
+  elsif  input == "EXIT"
     break
   end
 end

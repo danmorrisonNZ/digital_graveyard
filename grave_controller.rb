@@ -5,8 +5,23 @@ class Undertaker
 
   def initialize
     @tombstone = Tombstones.new
-    @tombstone_constructor = TombstoneConstructor.new
+    @tombstone_view = TombstoneView.new
   end
 
+  def create_tombstone
+    @tombstone.create
+  end
+
+  def request_information
+    @tombstone_view.dead_details
+  end
+
+  def user_input
+    @tombstone_view.user_input
+  end
+
+  def welcome_message
+    @tombstone_view.render_welcome
+  end
 
 end
