@@ -8,6 +8,7 @@ class TombstoneParse
   def initialize
     @file = 'grave_database.csv'
     @graveyard = nil
+    tombstone
   end
   def tombstone
     return @graveyard if @graveyard
@@ -30,15 +31,17 @@ class NewTombstoneConstructor
 
   def to_s
     <<-STRING
+
     Name         #{@name}
     DOB-DOD      #{@date_of_birth}-#{@date_of_death}
     Last words   #{@last_words}
+    
     STRING
   end
 end
 
 
 parse = TombstoneParse.new
-parse.tombstone
- parse.graveyard
-puts parse.graveyard.first
+
+
+puts parse.graveyard
