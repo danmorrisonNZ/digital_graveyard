@@ -2,11 +2,16 @@ require 'CSV'
 
 class Tombstones
 
+  def create
+
+  end
+
+
 end
 
-class TombstoneConstrutor(name,dob,dod,last_words)
+class TombstoneConstrutor
 
-  def initialize
+  def initialize(name,dob,dod,last_words)
     @date_of_birth = dob
     @date_of_death = dod
     @name = name
