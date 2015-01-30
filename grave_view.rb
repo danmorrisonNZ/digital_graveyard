@@ -32,6 +32,10 @@ class TombstoneView
      puts "Digital graveyard menu: You can CREATE, VIEW or EXIT. "
   end
 
+  def render_tombstones(all_tombstones)
+    puts all_tombstones
+  end
+
   def render_error_message
     puts "I'm sorry that is not a valid command"
   end
