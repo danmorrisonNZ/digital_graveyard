@@ -17,7 +17,9 @@ class TombstoneParse
     return @graveyard if @graveyard
       @graveyard = []
       CSV.foreach(@file) do |row|
+        next if row.first == "NAME"
         @graveyard << Tombstones.new(row)
+      
       end
       return @graveyard
   end
