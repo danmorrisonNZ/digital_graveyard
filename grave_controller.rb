@@ -4,7 +4,6 @@ require_relative 'grave_view.rb'
 class Undertaker
 
   def initialize
-    @tombstone = Tombstone.new
     @tombstone_parse = TombstoneParse.new
     @tombstone_view = TombstoneView.new
   end
@@ -44,6 +43,11 @@ class Undertaker
 
   def menu_message
     @tombstone_view.render_menu
+  end
+
+  def view_all_tombstones
+    all_tombstones = @tombstone_parse.graveyard
+    @tombstone_view.render_tombstones(all_tombstones)
   end
 
   def incorrect_message
