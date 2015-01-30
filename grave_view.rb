@@ -12,6 +12,10 @@ class TombstoneView
     gets.chomp
   end
 
+   def tombstone_input
+    gets.chomp
+  end
+
   def render_date_of_birth_request
     puts "Please enter the date of birth of the deceased"
   end
@@ -22,6 +26,14 @@ class TombstoneView
 
   def render_last_words_request
     puts "Please enter the last words of the deceased"
+  end
+
+  def render_menu
+     puts "Digital graveyard menu: You can CREATE, VIEW or EXIT. "
+  end
+
+  def render_error_message
+    puts "I'm sorry that is not a valid command"
   end
 
 end

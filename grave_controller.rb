@@ -18,7 +18,12 @@ class Undertaker
   end
 
   def user_input
-    @tombstone_view.user_input
+     @tombstone_view.user_input
+  end
+
+  def new_tombstone_input
+    tombstone_info = @tombstone_view.tombstone_input
+    @tombstone_parse.new_tombstones << tombstone_info
   end
 
   def request_date_of_birth
@@ -35,6 +40,14 @@ class Undertaker
 
   def welcome_message
     @tombstone_view.render_welcome
+  end
+
+  def menu_message
+    @tombstone_view.render_menu
+  end
+
+  def incorrect_message
+    @tombstone_view.render_error_message
   end
 
 end

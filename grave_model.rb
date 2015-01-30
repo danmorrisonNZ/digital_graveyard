@@ -2,14 +2,17 @@ require 'csv'
 
 
 class Tombstone
+
 end
 
 class TombstoneParse
+  attr_accessor :new_tombstones
   attr_reader :file, :graveyard
   def initialize
     @file = 'grave_database.csv'
     @graveyard = nil
     tombstone
+    @new_tombstones = []
   end
   def tombstone
     return @graveyard if @graveyard
