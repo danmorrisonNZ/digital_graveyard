@@ -4,7 +4,7 @@ require_relative 'grave_view.rb'
 class Undertaker
 
   def initialize
-    @tombstone = Tombstone.new
+
     @tombstone_parse = TombstoneParse.new
     @tombstone_view = TombstoneView.new
   end
@@ -24,6 +24,10 @@ class Undertaker
   def new_tombstone_input
     tombstone_info = @tombstone_view.tombstone_input
     @tombstone_parse.new_tombstones << tombstone_info
+
+  end
+  def new_user_creation
+    @tombstone_parse.new_user_tombstone
   end
 
   def request_date_of_birth
