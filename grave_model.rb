@@ -36,13 +36,13 @@ class NewTombstoneConstructor
     Name         #{@name}
     DOB-DOD      #{@date_of_birth}-#{@date_of_death}
     Last words   #{@last_words}
-    
+
     STRING
   end
 end
 
 
-parse = TombstoneParse.new
+# parse = TombstoneParse.new
 
 
-puts parse.graveyard
+# puts parse.graveyard
