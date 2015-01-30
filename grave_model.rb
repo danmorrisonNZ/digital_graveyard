@@ -1,11 +1,14 @@
 require 'csv'
 
+
 class TombstoneParse
+  attr_accessor :new_tombstones
   attr_reader :file, :graveyard
   def initialize
     @file = 'grave_database.csv'
     @graveyard = nil
     tombstone
+    @new_tombstones = []
   end
   def new_user_tombstone(user_details)
     @graveyard.push(Tombstones.new(user_details))
@@ -19,7 +22,7 @@ class TombstoneParse
       CSV.foreach(@file) do |row|
         next if row.first == "NAME"
         @graveyard << Tombstones.new(row)
-      
+
       end
       return @graveyard
   end
@@ -45,5 +48,4 @@ class Tombstones
 end
 
 
-parse = TombstoneParse.new
-puts parse.graveyard
+
