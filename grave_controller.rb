@@ -50,6 +50,11 @@ class Undertaker
     @tombstone_view.render_menu
   end
 
+  def view_all_tombstones
+    all_tombstones = @tombstone_parse.graveyard
+    @tombstone_view.render_tombstones(all_tombstones)
+  end
+
   def incorrect_message
     @tombstone_view.render_error_message
   end
