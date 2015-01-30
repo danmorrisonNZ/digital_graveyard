@@ -10,10 +10,10 @@ class TombstoneParse
     tombstone
     @new_tombstones = []
   end
-  def new_user_tombstone(user_details)
-    @graveyard.push(Tombstones.new(user_details))
+  def new_user_tombstone
+    @graveyard.push(Tombstones.new(@new_tombstones))
     CSV.open(@file,"a") do |csv|
-      csv << user_details
+      csv << @new_tombstones
     end
   end
   def tombstone
@@ -46,6 +46,3 @@ class Tombstones
     STRING
   end
 end
-
-
-
